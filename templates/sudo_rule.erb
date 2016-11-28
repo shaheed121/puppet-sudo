@@ -1,0 +1,11 @@
+# Sudo::Rule
+# Sudo rule for <%= @group %>
+<% if @commands == 'ALL' -%>
+%<%= @group %> ALL=(<%= @target %>) NOPASSWD:ALL
+<% else -%>
+Cmnd_Alias <%= @name.upcase.sub("-","_") %>_CMDS=<%= Array(@commands).join(', ') %>
+%<%= @group %> ALL=(<%= @target %>) NOPASSWD:<%= @name.upcase.sub("-","_") %>_CMDS
+<% end -%>
+<% for default in @defaults -%>
+Defaults:%<%= @group %> <%= default %>
+<% end -%>

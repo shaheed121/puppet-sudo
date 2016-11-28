@@ -1,0 +1,4 @@
+Gemfile.lock
+spec/fixtures/*
+*.swp
+.rake_tasks~

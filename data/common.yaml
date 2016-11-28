@@ -1,0 +1,6 @@
+---
+sudo::cmnd_alias: {}
+sudo::default_sudo_vars: []
+sudo::full_sudo_groups: []
+sudo::host_alias: {}
+sudo::logging_enabled: false

@@ -1,0 +1,15 @@
+# Sudo::logging
+# Enabling sudo output logging
+Defaults log_output
+Defaults iolog_dir="<%= $log_dir %>"
+Defaults iolog_file="<%= $log_file -%>"
+<% if $disable_cmnd_logging =~ Array { -%>
+<% $disable_cmnd_logging.each |$cmnd| { -%>
+Defaults!<%= $cmnd %> !log_output
+<% } -%>
+<% } -%>
+<% if $disable_user_logging =~ Array { -%>
+<% $disable_user_logging.each |$user| { -%>
+Defaults:<%= $user %> !log_output
+<% } -%>
+<% } -%>

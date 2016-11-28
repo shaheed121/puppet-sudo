@@ -1,0 +1,16 @@
+require: rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.1
+  Exclude:
+    - spec/fixtures/**/*
+    - vendor/**/*
+
+RSpec/ExampleLength:
+  Enabled: False
+
+Metrics/ModuleLength:
+  Enabled: False
+
+RSpec/DescribeClass:
+  Enabled: False
